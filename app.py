@@ -173,11 +173,11 @@ def create_directories():
 # Serve frontend
 @app.route('/')
 def serve_frontend():
-    return send_from_directory('static', 'index.html')
+    return send_from_directory('.', 'index.html')
 
 @app.route('/<path:path>')
 def serve_static(path):
-    return send_from_directory('static', path)
+    return send_from_directory('.', path)
 
 # Parent portal route
 @app.route('/parent-portal')
